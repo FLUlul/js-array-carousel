@@ -8,16 +8,18 @@
     display: flex;
     justify-content: center;
     height: 400px;
+    margin: 100px 0;
 }
 
 
 .image {
     width: 1000px;
     height: 100%;
-    /* display: none; */ /* da attivare con active */
+    display: none; /* da attivare con active */
     position: relative;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: end;
 }
 
 .image img{
@@ -27,7 +29,7 @@
 }
 .image h2 {
     position: absolute;
-    bottom: 40px;
+    bottom: 70px;
     right: 10px;
 }
 
@@ -37,22 +39,38 @@
     right: 10px;
 }
 
-.images .active {
+.image.active {
     display: block;
 }
 
 
 .thumb {
     height: calc(100% / 5 );
+    width: 150px;
+    filter: opacity(0.5);
 }
 
 .thumbs .thumb img {
     height: 100%;
-    filter: opacity(0.5);
-    
+    width: 100%;  
 }
 
-.thumbs .thumb img .active {
+.thumb.active {
     filter: opacity(1);
     border: solid white 3px;
+}
+
+
+.back,
+.next {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: grey;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+    margin: 100% 10px;
+    cursor: pointer;
+    display: block;
 }
