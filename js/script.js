@@ -34,15 +34,24 @@ const text = [
 /*  -creo le due costanti relative ai contenitori di immagini e thumbnails
     -creo le due variabili con una stringa vuota
     -vado a creare con un ciclo
-        - il pattern di html assegnandolo alle variabili con la stringa vuota per tot volte la durata degli elementi arrey
+        - il pattern di html assegnandolo alle variabili con la stringa vuota per tot volte la durata degli elementi array
+
         -ad ogni elemento assegno l'indice degli array che gia ho
     -vado a stampare gli elementi nei contenitori
+
     -se clicco il pulsante next
-        rimuovo dalla prima immagine la classe active
+        rimuovo dalla scorsa immagine la classe active
         aggiungo alla prossima immagine la classe active
 
-        rimuovo alla prima thumb la classe active
+        rimuovo alla scorsa thumb la classe active
         aggiungo alla prossima thumb la classe active
+
+    -se clicco il pulsante back
+        rimuovo dalla prossima immagine la classe active
+        aggiungo alla scorsa immagine la classe active
+
+        rimuovo alla prossima thumb la classe active
+        aggiungo alla scorsa thumb la classe active
 */
 
 const imagesMain = document.querySelector(".images");
@@ -80,21 +89,22 @@ document.getElementsByClassName("image")[0].classList.add("active");
 thumbsMain.innerHTML = thumb;
 document.getElementsByClassName("thumb")[0].classList.add("active");
 
-let xn=0;
+let xn=0; //creo una variabile che mi servirà per definire a che indice sono dell'arrayClasse "image" e "thumb")
 
 next.addEventListener("click",
 
     function(){   
 
-        xn++;
+        xn++; //incremento di 1 ad ogni click
 
-        if(xn > 4 ) {
+        //condizione se l'indice è maggiore del numero massimo degli elementi torna al primo indice
+        if(xn > 4 ) { 
             xn=0;
         }
 
         // rimuovo la classe active dall'elemento (al momento iniziale solo da quello statico)
         document.querySelector(".image.active").classList.remove("active") 
-         
+
         // aggiungo alla classe image all'indice "xn" dell'arrayClasse la classe active
         document.getElementsByClassName("image")[xn].classList.add("active");
 
@@ -113,6 +123,7 @@ back.addEventListener("click",
 
         xn--;
 
+        //condizione se l'indice è minore del numero minimo degli elementi va all'ultimo indice
         if(xn < 0 ) {
             xn=4;
         }
