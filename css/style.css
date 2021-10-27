@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+}
+
+
+.image {
+    width: 1000px;
+    height: 100%;
+    /* display: none; */ /* da attivare con active */
+    position: relative;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.image h2 {
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+}
+
+.image p {
+    position: absolute;
+    bottom: 25px;
+    right: 10px;
+}
+
+.images .active {
+    display: block;
+}
+
+
+.thumb {
+    height: calc(100% / 5 );
+}
+
+.thumbs .thumb img {
+    height: 100%;
+    filter: opacity(0.5);
+    
+}
+
+.thumbs .thumb img .active {
+    filter: opacity(1);
+    border: solid white 3px;
+}
