@@ -98,7 +98,7 @@ next.addEventListener("click",
         xn++; //incremento di 1 ad ogni click
 
         //condizione se l'indice è maggiore del numero massimo degli elementi torna al primo indice
-        if(xn > 4 ) { 
+        if(xn > items.length-1 ) { 
             xn=0;
         }
 
@@ -125,7 +125,7 @@ back.addEventListener("click",
 
         //condizione se l'indice è minore del numero minimo degli elementi va all'ultimo indice
         if(xn < 0 ) {
-            xn=4;
+            xn= items.length-1;
         }
 
         document.querySelector(".image.active").classList.remove("active")
